@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+.vite/
+
+# Env / secrets
+.env
+.env.local
+.env.*.local
+
+# Pulumi (Pulumi.yaml and Pulumi.<stack>.yaml ARE committed —
+# secrets inside them are encrypted by Pulumi itself)
+.pulumi/
+
+# AWS
+.aws-sam/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+
+# TypeScript
+*.tsbuildinfo
+
+# Test coverage
+coverage/
+
+# DynamoDB local
+.dynamodb/
+shared-local-instance.db
