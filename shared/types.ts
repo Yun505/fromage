@@ -39,3 +39,30 @@ export const PROCESS_WORDS: ProcessTag[] = [
   "artisan", "brined", "blue-veined", "soft-ripened",
   "smear-ripened", "whey", "processed", "organic",
 ];
+
+export interface User{
+  userId: string; // Not self-generated
+  email: string;
+  name: string;
+  createdAt: string;
+}
+
+export interface Tasting{
+  tastingId: string;
+  userId: string;
+  cheeseId: string;
+  rating: number;
+  notes: string;
+  date: string;
+}
+
+export interface TastingInput{
+  cheeseId: string;
+  rating: number;
+  notes: string;
+}
+
+export interface PairingSuggestion{
+  label: string;
+  reason: string;
+}
