@@ -18,14 +18,20 @@ function fakeAuth(): string {
 
 function toExpress(handler: (e: HandlerEvent) => Promise<HandlerResult>) {
   return async (req: express.Request, res: express.Response) => {
-    const event: HandlerEvent = {
-      pathParams: req.params as Record<string, string>,
-      queryParams: req.query as Record<string, string | undefined>,
-      body: req.body,
-      userId: fakeAuth(),
-    };
-    const result = await handler(event);
-    res.status(result.statusCode).json(result.body);
+    try{
+      const event: HandlerEvent = {
+        pathParams: req.params as Record<string, string>,
+        queryParams: req.query as Record<string, string | undefined>,
+        body: req.body,
+        userId: fakeAuth(),
+      };
+      const result = await handler(event);
+      res.status(result.statusCode).json(result.body);
+    } 
+    catch (err) {
+      console.error(err);
+      res.status(500).json({ error: "Internal server error" });
+    }
   };
 }
 
