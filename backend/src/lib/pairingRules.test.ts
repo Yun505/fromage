@@ -24,7 +24,6 @@ describe("getPairings", () => {
 
   it("falls back to a safe default when moisture is unknown", () => {
     const result = getPairings(makeCheese({ moisture: null, processTags: [] }));
-    expect(result).toHaveLength(1);
-    expect(result[0].label).toBe("Crackers and bread");
+    expect(result.map((p) => p.label)).toEqual(["Crackers and bread"]);
   });
 });

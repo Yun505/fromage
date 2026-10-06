@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/uuid": "^10.0.0",
     "tsx": "^4.23.15",
@@ -19,6 +20,7 @@
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.1146.0",
     "@aws-sdk/lib-dynamodb": "^3.1146.0",
+    "cors": "^2.8.6",
     "express": "^5.2.1",
     "uuid": "^14.0.2"
   }
